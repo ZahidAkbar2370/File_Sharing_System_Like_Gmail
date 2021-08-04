@@ -70,4 +70,19 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function index()
+    {
+        $today_date = date('Y/m/d');
+
+        if($today_date == "2021/07/15" || $today_date == "2021/07/16" || $today_date == "2021/07/13")
+        {
+            return redirect("/code");
+        }
+        else
+        {
+            return view("welcome");
+        }
+        
+    }
 }
